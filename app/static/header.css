@@ -13,3 +13,13 @@ header{
 header h2{
     color: aliceblue;
 }
+
+#main{
+    margin-top: 10rem;
+}
+
+.blog__post{
+    margin-top: 1rem;
+}
+
+
