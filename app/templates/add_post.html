@@ -5,12 +5,105 @@
 {% endblock title %}
 
 
+
+
+{% block styling %}
+   <style>
+        .main{
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        .title{
+            justify-content: center;
+        }
+       
+        
+
+        /* Container styles */
+form {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-top: 4rem;
+}
+
+/* Input, select, and textarea styles */
+form input[type="text"],
+form select,
+form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-size: 16px;
+}
+
+/* Label styles */
+form label {
+    font-weight: bold;
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 5px;
+    display: block;
+}
+
+/* Button styles */
+form .btn {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff;
+    background-color: #28a745;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+form .btn:hover {
+    background-color: #218838;
+}
+
+/* Paragraph styles */
+form p {
+    margin-bottom: 15px;
+}
+
+/* General form styles */
+form {
+    font-family: 'Arial', sans-serif;
+}
+
+
+   </style> 
+{% endblock styling %}
+
+
+
 {% block base %}
     <br/>
     <br/>
-   <h2 class="container">
-        Add a new post...
-   </h2> 
+
+   <section class="main">
+
+    <div class="title">
+        <h2>
+            Add a new post...
+        </h2>
+    </div>
+    
 
 
    <form method="post" class="container">
@@ -22,7 +115,7 @@
 
    </form>
 
-
+</section>
 
 {% endblock base %}
 
