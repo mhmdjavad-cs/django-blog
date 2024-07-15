@@ -1,13 +1,30 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>post {{post.pk}} </title>
-</head>
-<body>
-    {{post.title}}
-    {{post.author}}
-    {{post.body}}
-</body>
-</html>
+{% extends 'base.html' %}
+
+
+{% block base %}
+   
+    <div class="container">
+
+        <br/>
+        <br/>
+        <br/>
+
+        <h1>{{post.title}}</h1>
+        <br/>
+        <br/>
+
+        {{post.body}}
+        
+        <br>
+        <br/>
+        <h4>by: {{post.author}}</h4>
+
+        <br/>
+
+        <a href={% url 'home_page' %} class="btn btn-secondary"> back to home </a>
+
+    </div>
+
+
+{% endblock base %}
+

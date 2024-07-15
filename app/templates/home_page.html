@@ -3,15 +3,26 @@
 
 {% block base %}
 
-    <section id="main">
+    <br/>
+    <br/>
+    <br/>
+
+    <section id="main" class="container">
 
         <ul>
             {% for post in object_list %}
             
                 <li class="blog__post">
-                    <h3><a href={% url 'post_detail' post.pk  %} >{{post.title}}</a> - {{post.author}}</h3>
+                    <h3>{{post.title}} - {{post.author}}</h3>
                     {{post.body}}
+
+                    <br/>
+                    <br/>
+                    <a href={% url 'post_detail' post.pk %} class="btn btn-primary">read more</a>
                 </li>
+
+                <br/>
+                <br/>
 
             {% endfor %}
         </ul>
