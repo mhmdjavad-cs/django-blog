@@ -1,6 +1,22 @@
 {% extends 'base.html' %}
 
 
+
+{% block styling %}
+   <style>
+    .title{
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+    }
+    .title small{
+        margin-bottom: 0;
+    }
+   </style> 
+{% endblock styling %}
+
+
+
 {% block base %}
 
     <br/>
@@ -13,7 +29,19 @@
             {% for post in object_list %}
             
                 <li class="blog__post">
-                    <h3>{{post.title}} - {{post.author}}</h3>
+                    
+                    <div class="title">
+                        <h3>
+                            {{post.title}} - {{post.author}} 
+                        </h3>
+                        <small>
+                            <a href={% url 'update_post' post.pk %}>
+                                (Edit)
+                            </a>
+                        </small>
+                    </div>
+                    
+
                     {{post.body}}
 
                     <br/>

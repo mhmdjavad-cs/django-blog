@@ -1,6 +1,6 @@
 from django.http import HttpResponse
 from django.shortcuts import render
-from django.views.generic import ListView, DetailView, CreateView
+from django.views.generic import ListView, DetailView, CreateView, UpdateView
 from .models import Post 
 
 
@@ -19,6 +19,12 @@ class AddPost(CreateView):
     template_name = 'add_post.html'
     fields = "__all__"
         
+
+class PostUpdateView(UpdateView):
+    model = Post
+    template_name = 'update_post.html'
+    fields = ('title', 'body')
+
 
 
 
