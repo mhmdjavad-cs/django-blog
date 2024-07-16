@@ -1,7 +1,9 @@
 from django.http import HttpResponse
 from django.shortcuts import render
-from django.views.generic import ListView, DetailView, CreateView, UpdateView
+from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
 from .models import Post 
+from django.urls import reverse_lazy
+
 
 
 class HomeView(ListView):
@@ -25,6 +27,11 @@ class PostUpdateView(UpdateView):
     template_name = 'update_post.html'
     fields = ('title', 'body')
 
+
+class PostDeleteView(DeleteView):
+    model = Post
+    template_name = 'delete_post.html'
+    success_url = reverse_lazy('home_page')
 
 
 

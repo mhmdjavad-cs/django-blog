@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+
+{% block title %}
+   deleting a post 
+{% endblock title %}
+
+
+{% block styling %}
+   <style>
+    .button-container{
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+    }
+   </style>
+{% endblock styling %}
+
+
+
+{% block base %}
+    
+<br/>
+<br/>
+
+<section class="main container">
+
+    <div class="title">
+        <h2>
+            deleting: {{post.title}}
+        </h2>
+    </div>
+    
+<br/>
+<br/>
+<br/>
+
+   <form method="post" class="container">
+
+        {% csrf_token %}
+
+        <h6>are you sure you want to delete this post?</h6>
+        <div class="button-container">
+            <button class="btn btn-danger">Delete</button>
+            <a href="{% url 'home_page' %}" class="btn btn-secondary">Back</a>
+        </div>
+
+   </form>
+{% endblock base %}
+
